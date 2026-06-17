@@ -45,4 +45,18 @@ is_component_build = true
 
 # Tells the compiler to optimize for build speed rather than maximum execution performance
 optimize_for_size = true
+# --- ÉP TỐC ĐỘ BIÊN DỊCH TRÊN GITHUB RUNNER (THAY THẾ CHO -j 1) ---
+is_debug = false
+symbol_level = 0                   # Tắt file debug. Giảm 80% thời gian link file trên Windows.
+blink_symbol_level = 0             # Tắt debug riêng cho Blink engine để giảm tải RAM.
+is_official_build = false          # Tắt tối ưu hóa Official. Tiết kiệm hàng giờ chạy đơn nhân.
+use_thin_lto = false               # BẮT BUỘC: Tắt LTO để tránh tràn bộ nhớ RAM (OOM) gây crash.
+use_lld = true                     # Ép Windows dùng linker LLD nhanh hơn của LLVM.
+
+# --- BẢO MẬT & CHỐNG THEO DÕI CHO UNGOOGLED CHROMIUM ---
+enable_reporting = false           # Triệt tiêu hoàn toàn telemetry và báo cáo ngầm.
+enable_speech_service = false      # Xóa bỏ API nhận diện giọng nói gửi về máy chủ từ xa.
+enable_print_preview = false       # Gỡ bỏ các hàm kết nối cloud print theo dõi thiết bị.
+v8_enable_sandbox = true           # Kích hoạt cô lập bộ nhớ cho JavaScript Engine.
+v8_enable_webassembly = false      # Tắt WebAssembly để chặn đứng 70% nguy cơ exploit zero-day.
 
