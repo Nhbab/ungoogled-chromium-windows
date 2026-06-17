@@ -14,3 +14,23 @@ v8_symbol_level=0
 symbol_level=0
 enable_rust=true
 enable_mse_mpeg2ts_stream_parser=true
+# Disables speech recognition APIs that talk to remote servers
+enable_speech_service = false
+
+# Disables background printing extensions and remote printing vulnerabilities
+enable_print_preview = false
+
+# Remove side panel or discover tracking vectors
+enable_lens_desktop_html_ui = false
+# Completely disables Google's FLOC / Privacy Sandbox tracking APIs at compile time
+enable_reporting = false
+# Enable Control Flow Guard (Windows) or Control Flow Integrity (Linux/macOS)
+is_cfi = true
+use_cfi_cast = true
+
+# Enforces V8 engine sandboxing to mitigate memory corruption vulnerabilities
+v8_enable_sandbox = true
+
+# Optional: Build the browser with the "Drumbrake" interpreter if you want to completely drop JIT compiler vectors
+v8_enable_webassembly = false 
+
