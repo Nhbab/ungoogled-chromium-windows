@@ -33,4 +33,16 @@ v8_enable_sandbox = true
 
 # Optional: Build the browser with the "Drumbrake" interpreter if you want to completely drop JIT compiler vectors
 v8_enable_webassembly = false 
+# Disables debugging symbols. This reduces build size and cuts linking times drastically.
+symbol_level = 0
+
+# Disables Link-Time Optimization. LTO takes hours on a single thread.
+is_official_build = false
+use_thin_lto = false
+
+# Enables component builds (splits monolithic binaries into smaller shared libraries)
+is_component_build = true
+
+# Tells the compiler to optimize for build speed rather than maximum execution performance
+optimize_for_size = true
 
